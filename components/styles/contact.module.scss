@@ -1,0 +1,94 @@
+@import '../../styles/variables.scss';
+
+.root {
+	position: relative;
+	width: 100%;
+	padding-top: $GLOBAL-MARGIN;
+	font-weight: normal;
+	font-size: 18px;
+	text-align: center;
+}
+
+.wrapper {
+	margin: 0;
+	padding: 0 $GLOBAL-MARGIN $GLOBAL-MARGIN;
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+
+	@include sm {
+		flex-direction: row;
+	}
+
+	@include lg {
+		width: 80%;
+		max-width: $MAX-WIDTH;
+		margin: 0 auto;
+	}
+
+	.column {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.field {
+		margin-bottom: $GLOBAL-MARGIN / 2;
+	}
+
+	input {
+		height: 45px;
+		width: 100%;
+		border: none;
+		background-color: #f0f0f0;
+		color: gray;
+		font-size: 18px;
+		padding-left: 10px;		
+	}
+
+	.left {
+
+		@include sm {
+			width: 50%;
+			padding-right: $GLOBAL-MARGIN * 2;			
+		}
+	}
+	.right {
+
+		@include sm {
+			width: 50%;
+			padding-left: $GLOBAL-MARGIN * 2;			
+		}
+
+	}
+
+	.stateAddress {
+
+		@include sm {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+}
+
+.button {
+	cursor: pointer;
+	width: fit-content;
+	background-color: $BUTTON-COLOR;
+	color: #000;
+	border: none;
+	padding: 7px 12px;
+	font-size: 18px;
+ }
+
+.error {
+	color: $BUTTON-COLOR;
+	padding-bottom: $GLOBAL-MARGIN / 2;
+}
+
+.success {
+	text-align: center;
+	font-size: 35px;
+	color: $GOLDEN-COLOR;
+	padding-bottom: $GLOBAL-MARGIN / 2;
+}
+

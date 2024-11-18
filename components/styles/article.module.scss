@@ -1,0 +1,62 @@
+@import '../../styles/variables.scss';
+
+.root {
+	position: relative;
+	width: 100%;
+	padding-top: $GLOBAL-MARGIN;
+	font-size: 18px;
+	line-height: 30px;
+	color: $FONT-WHITE;
+
+	.wrapper {
+		background-color: black;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		font-weight: normal;
+		text-align: left;
+		
+		@include lg {
+			width: 80%;
+			max-width: $MAX-WIDTH;
+			margin: 0 auto;
+			padding: 0px;
+			flex-direction: row;
+		}
+
+		.left {
+			width: auto;
+			padding: $GLOBAL-MARGIN $GLOBAL-MARGIN 0 $GLOBAL-MARGIN; 
+
+			@include lg {
+				width: 57%;
+				padding: $GLOBAL-MARGIN 0 $GLOBAL-MARGIN $GLOBAL-MARGIN;
+			}
+		}
+
+		.right {
+			width: auto;
+			padding: $GLOBAL-MARGIN;
+
+			@include lg {
+				width: 43%;
+			}
+
+			.headline {
+				font-size: 35px;
+				font-weight: 700;
+			}
+			
+			.link {
+				font-size: 25px;
+				font-weight: 700;
+
+				a {
+					color: inherit;
+					text-decoration: none;
+				}
+			}
+		}
+	
+	}	
+}

@@ -1,0 +1,108 @@
+@import '../../styles/variables.scss';
+
+.root {
+	position: relative;
+	color: white;
+	margin-bottom: $GLOBAL-MARGIN * 2;
+
+	.mobile {
+		display: block;
+
+		@include md {
+			display: none;
+		}
+
+		.title {
+			height: 150px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			.titleWrapper {
+				// width: fit-content;
+				width: 90%;
+				text-align: center;
+				font-size: 25px;
+				font-weight: 700;
+	
+			}
+		}
+
+		.mobileHeaderImage {
+			background-image: url('/images/logo-yellow.png');
+			padding-bottom: 50px;
+		}
+	}
+
+	.desktop {
+		display: none;
+
+		@include md {
+			display: block;
+		}
+
+		.background {
+			display: flex;
+			width: 100%;
+			height: $HERO-HEIGHT;
+		
+			.left {
+				width: 50%;
+				background-image: url('/images/logo-blue.png');
+			}
+
+			.right {
+				width: 50%;
+				background-image: url('/images/logo-yellow.png');
+			}
+		}
+
+		.wrapper {
+			width: 100%;
+			position: absolute;
+			top: 0px;		
+
+			.center {
+				display: flex;
+				width: 80%;
+				height: $HERO-HEIGHT;
+				max-width: $MAX-WIDTH;
+				margin: 0 auto;
+				background-image: url('/images/logo-blue.png');
+				color: black;
+
+				.desktopHeaderImage {
+					position: relative;
+					width: 70%;
+					height: $HERO-HEIGHT;
+				}
+
+				.title {
+					position: relative;
+					width: 30%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+					.titleWrapper {
+						font-size: 36px;
+						font-weight: 700;
+						font-stretch: normal;
+						font-style: normal;
+						line-height: 1;
+						letter-spacing: normal;
+						text-align: center;
+						padding: 0px 20px;
+					}
+				}			
+			}
+		}
+
+	}
+
+	.title {
+		background-image: url('/images/logo-blue.png');
+		text-transform: uppercase;
+		color: white;
+	}
+}

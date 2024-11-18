@@ -1,0 +1,144 @@
+@import '../../styles/variables.scss';
+
+.root {
+	position: relative;
+	width: 100%;
+	padding-top: $GLOBAL-MARGIN;
+
+	.wrapper {
+		width: 100%;
+
+		@include sm {
+			width: auto;
+			margin: 0 $GLOBAL-MARGIN;
+		}
+
+		@include lg {
+			width: 80%;
+			max-width: $MAX-WIDTH;
+			margin: 0 auto;
+			padding: 0px;
+		}
+
+		.item {
+			margin-bottom: $GLOBAL-MARGIN * 2;
+
+			.content {
+				display: flex;
+				flex-direction: column;
+				justify-content: right;
+				// background-color: gainsboro;
+
+				@include md {
+					flex-direction: row;
+				}
+
+				.photo {
+					width: auto;
+					// background-color: lightblue;
+
+					@include md {
+						width: 43%;
+					}					
+
+					.imageRatio {
+						
+						@include md {
+							margin-left: 10%;
+							padding-top: 7px;
+							margin-left: 0;
+						}						
+					}
+				}
+
+				.name {
+					width: auto;
+
+					@include md {
+						width: 57%;
+					}
+
+					> h2 {
+						margin: 0 0 ($GLOBAL-MARGIN / 2) 35px;
+						font-weight: 800;
+
+						@include md {
+							margin: 0 0 ($GLOBAL-MARGIN / 2) 15%;
+						}					
+					}
+
+				}
+
+				.bio {
+					width: auto;
+
+					@include md {
+						width: 57%;
+					}
+
+					.text {
+						margin: $GLOBAL-MARGIN $GLOBAL-MARGIN 0 $GLOBAL-MARGIN;
+						text-align: left;
+						// background-color: lightsalmon;
+
+						@include sm {
+							margin: $GLOBAL-MARGIN 0 0 0;
+						}
+
+						@include md {
+							margin-left: 15%;
+							margin-top: 0;
+						}
+
+						> p {
+							margin-top: 0;
+						}
+					}
+				}
+			}
+		}
+
+		.item:nth-child(even) {
+
+			.content {
+				flex-direction: column;
+				justify-content: left;
+
+				@include md {
+					flex-direction: row-reverse;
+				}
+
+				.name {
+					width: auto;
+
+					@include md {
+						width: 57%;
+					}
+
+					> h2 {
+						margin: 0 0 ($GLOBAL-MARGIN / 2) 35px;
+
+						@include md {
+							margin-left: 0;
+						}
+					}
+				}
+
+				.bio {
+					.text {
+
+						@include md {
+							margin-left: 0;
+							margin-right: 10%;
+						}
+					}
+				}
+			}
+		}
+	
+	}
+
+	h2, h3, h4, h5, h6 {
+		margin-top: 0;
+	}
+}

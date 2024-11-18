@@ -1,0 +1,241 @@
+@import '../../styles/variables.scss';
+
+.buttons {
+	position: relative;
+	width: 100%;
+	margin-top: $GLOBAL-MARGIN * 1.5;
+
+	.wrapper {
+		font-size: 30px;
+		font-weight: 700;
+		display: flex;
+		justify-content: center;
+
+		> div:nth-child(1) {
+			margin-right: 8px;
+		}
+		
+		@include lg {
+			width: 80%;
+			max-width: $MAX-WIDTH;
+			margin: 0 auto;
+			justify-content: flex-end;
+		}
+	
+		.button {
+			cursor: pointer;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 43px;
+			height: 20px;
+			padding: 5px 15px;
+			background-color: #a0a0a0;
+			color: black;
+
+			&:hover {
+				background-color: $GOLDEN-COLOR;
+			}
+		}
+
+		.button a {
+			color: black;
+			text-decoration: none;
+		}		
+	}
+}
+
+.root {
+	position: relative;
+	width: 100%;
+	color: white;
+	margin-top: $GLOBAL-MARGIN * 3;
+	background-color: black;
+	// padding-left: 35px;
+
+	@include md {
+		background-image: url('/images/footer-background-line.png');
+		padding-left: 0;
+	}
+
+	.wrapper {
+		width: 100%;
+
+		.inner {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			margin: 0 auto;
+			width: fit-content;			
+
+			@include md {
+				width: 80%;
+				flex-direction: row;
+				max-width: $MAX-WIDTH;
+				// margin: 0 auto;
+			}
+
+			.left {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+				// padding-right: $GLOBAL-MARGIN;
+				padding-top: 80px;
+
+				@include md {
+					display: block;
+					width: fit-content;
+				}
+
+				.gridContainer {
+					grid-template-columns: auto;
+
+					@include md {
+						grid-template-columns: auto auto;
+						justify-content: left;
+					}
+
+					.logo {
+						width: 310px;
+					}
+
+					.telephone {
+						color: $GOLDEN-COLOR;
+						margin-left: 45px;					
+						margin-top: 80px;
+						font-size: 42px;
+						font-weight: 700;
+
+						a {
+							color: inherit;
+							text-decoration: none;
+						}
+
+						@include md {
+							display: block;
+							color: $GOLDEN-COLOR;
+							margin-top: 26px;
+							font-size: 28px;
+							font-weight: 600;
+						}
+					}
+
+					.social {
+						display: flex;
+						justify-content: space-between;
+						width: 265px;
+						margin-left: 45px;
+						margin-top: 40px;
+						$ICO-WIDTH: 2;
+
+						@include md {
+							margin-top: 15px;
+							width: 265px;
+						}
+
+						.ico {
+							position: relative;
+
+							.facebook {
+								width: calc(23px / $ICO-WIDTH);
+							}
+							.twitter {
+								width: calc(59px / $ICO-WIDTH);
+							}
+							.instagram {
+								width: calc(49px / $ICO-WIDTH);
+							}
+							.youtube {
+								width: calc(67px / $ICO-WIDTH);
+							}
+						}
+					}
+				}
+
+			}
+
+			.right {
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+
+				@include md {
+					padding-top: 108px;
+					flex-direction: row;
+					justify-content: flex-end;				
+				}
+		
+				.navigation {
+					
+
+					@include md {
+						width: 100%;
+						margin: 0;
+					}				
+				}
+
+				.address {
+					padding-top: $GLOBAL-MARGIN;
+					padding-left: 45px;
+					margin: 0;
+
+					@include md {
+						width: fit-content;
+						padding: 0;
+						margin: 0 30px;
+					}
+
+					.smallLogo {
+						position: relative;
+						width: 100%;
+						margin: 0;
+						width: 175px;
+						padding-top: 20px;
+					}
+				}
+			}
+		}
+	}
+
+	.copyRight {
+		margin-top: 50px;
+		padding-bottom: 20px;
+		padding-left: 45px;
+		font-size: 16px;
+		
+		@include md {
+			width: 80%;
+			flex-direction: row;
+			max-width: $MAX-WIDTH;
+			margin-top: 100px;
+			// margin: 0 auto;
+			// padding-left: 90px;
+		}
+
+		.inner {
+			width: fit-content;
+			margin: 0 auto;
+
+			@include md {
+				margin-left: 45px;
+			}
+		}		
+	}
+
+	.mobile {
+		display: block;
+
+		@include md {
+			display: none;
+		}
+	}
+
+	.desktop {
+		display: none;
+
+		@include md {
+			display: block;
+		}
+	}
+}
