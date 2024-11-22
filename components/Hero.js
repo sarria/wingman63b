@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import Image from 'next/image'
-import styles from './styles/hero.module.scss'
+import styles from './hero.module.scss'
 
 function Hero({ title, mobileHeaderImage, desktopHeaderImage }) {
 	return (

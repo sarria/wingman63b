@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import styles from './styles/carousel.module.scss'
+import styles from './carousel.module.scss'
 import Image from 'next/image'
 
 // https://react-slick.neostack.com/docs/get-started

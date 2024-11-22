@@ -7,6 +7,7 @@ import PageContent from '../components/PageContent'
 function Index({ global, page }) {
   // console.log("Query ::", queryContent('home-page'))
   return page ? <PageContent page={page} global={global} /> : <NotFound page={page} />
+  // return <PageContent page={page} global={global} />
 }
 
 // This function gets called at build time on server-side.

@@ -12,38 +12,14 @@ export default function query(slug) {
 				  twitter
 				  instagram
 				  youtube
-				  burgerNavigationPicture {
-					altText
-					sourceUrl
-					mediaDetails {
-						width
-						height
-					}
-				  }
-				  burgerNavigationLeft {
+				  navigation {
 					page {
 					  ... on Page {
 						slug
 						title
 					  }
 					}
-				  }
-				  burgerNavigationRightTop {
-					page {
-					  ... on Page {
-						slug
-						title
-					  }
-					}
-				  }
-				  burgerNavigationRightBottom {
-					page {
-					  ... on Page {
-						slug
-						title
-					  }
-					}
-				  }
+				  }					
 				}
 			}
 			content: pages(where: {name: "${slug}"}) {
@@ -127,6 +103,18 @@ export default function query(slug) {
 								name
 								bio
 							}
+							articles {
+								photo {
+									altText
+									sourceUrl
+									mediaDetails {
+										width
+										height
+									}
+								}
+								headline
+								text
+							}								
 							image {
 								altText
 								sourceUrl

@@ -1,9 +1,9 @@
 import cx from 'classnames'
 import Link from 'next/link'
 import ImageRatio from './elements/ImageRatio'
-import styles from './styles/imageCard.module.scss'
+import styles from './imageCard.module.scss'
 
-const ImageCard = ({image, ratio, hasPadding, linkPage}) => {
+const ImageCard = ({index, image, ratio, hasPadding, linkPage, imagesLayout}) => {
 	// console.log('imageCard :: ', image, ratio)
 	const hasLink = image.linkPage?.slug ? 'hasLink' : ''
 	const label = image.linkLabel || image.linkPage?.title
@@ -19,9 +19,13 @@ const ImageCard = ({image, ratio, hasPadding, linkPage}) => {
 					<div className={cx(styles.image)}>
 						<ImageRatio image={image.image} ratio={ratio} />
 					</div>
-					{(label && hasLink != '') &&
+					{imagesLayout !== '5col' && (label && hasLink != '') &&
 					<div className={styles.link}>
 						{label.toUpperCase()}&nbsp;&nbsp;<gold>&gt;</gold>
+					</div>}
+					{imagesLayout === '5col' &&
+					<div className={styles.label} style={{backgroundColor: index % 2 == 0 ? 'white' : null}}>
+						{label ? label.toUpperCase() : <span>&nbsp;</span>}
 					</div>}
 				</div>
 			</div>

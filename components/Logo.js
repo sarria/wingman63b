@@ -2,23 +2,20 @@ import { ReactElement, forwardRef } from 'react';
 import Link from 'next/link'
 import cx from 'classnames'
 import Image from 'next/image'
-import LogoHome from '../images/Logo-Home.png'
-import LogoInner from '../images/logo-inner-71x420.png'
-import styles from './styles/logo.module.scss'
+import LogoImage from '../images/wingman-final-logo@2x.png'
+import styles from './logo.module.scss'
 
-function Logo(isHomePage) {
+function Logo({className, isHomePage}) {
 	return (
-		<div className={cx('pageTop', styles.root, {[styles.isHomePage]: isHomePage}, {[styles.isInnerPage]: !isHomePage})}>
+		<div className={cx(className, styles.root)}>
 			<div className={styles.wrapper}>
-				<div className={styles.logo}>
-					<Link href="/" passHref>
-						<Image
-							alt=''
-							src={isHomePage ? LogoHome : LogoInner}
-							layout="responsive"
-						/>
-					</Link>
-				</div>
+				<Link href="/" passHref>
+					<Image
+						alt=''
+						src={LogoImage}
+						layout="responsive"
+					/>
+				</Link>
 			</div>
 		</div>
 	)

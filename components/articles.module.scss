@@ -1,0 +1,156 @@
+@import '../styles/variables.scss';
+
+.root {
+	position: relative;
+	width: 100%;
+
+	.wrapper {
+		width: 100%;
+
+		@include sm {
+			width: auto;
+			margin: 0 $GLOBAL-MARGIN;
+		}
+
+		@include lg {
+			// width: 80%;
+			max-width: $MAX-WIDTH;
+			margin: 0 auto;
+			padding: 0px;
+		}
+
+		.item {
+
+			.content {
+				display: flex;
+				flex-direction: column;
+				justify-content: right;
+				// background-color: gainsboro;
+
+				@include md {
+					flex-direction: row-reverse;
+				}
+
+				.photo {
+					width: auto;
+					display: flex;
+					flex-direction: column;
+
+					@include md {
+						width: 50%;
+					}					
+
+					.imageRatio {
+						
+						@include md {
+							// margin-left: 10%;
+							// padding-top: 7px;
+							// margin-left: 0;
+						}						
+					}
+
+					.yellowBar {
+						width: 10%;
+						height: 10px;
+						background-color: $GOLDEN-COLOR;
+					}					
+				}
+
+				.textWrap {
+					width: auto;
+					color: black;
+					background-color: RGB(245, 245, 245);
+
+					@include md {
+						width: 50%;
+						display: flex;
+						flex-direction: column;
+					}
+
+					.text {
+						margin: $GLOBAL-MARGIN $GLOBAL-MARGIN 0 $GLOBAL-MARGIN;
+						text-align: left;
+						margin: 0;
+						width: auto;
+
+						@include md {
+							width: 70%;
+							padding-left: 20%;
+						}
+
+						> p {
+							margin-top: 0;
+						}
+
+						.headline {
+							text-transform: uppercase;
+							font-size: 95px;
+							font-family: 'Montserrat', sans-serif; /* or 'Montserrat  Poppins' */
+							font-weight: 100; /* Adjust weight for thickness */
+							letter-spacing: -6px;
+							margin: 0;
+						}
+
+						.yellowBar {
+							width: 12%;
+							height: 10px;
+							background-color: $GOLDEN-COLOR;
+							top: -37px;
+							position: relative;							
+						}						
+					}				
+				}
+			}
+		}
+
+		.item:nth-child(even) {
+
+			.content {
+				flex-direction: column;
+				justify-content: left;
+
+				@include md {
+					flex-direction: row;
+				}
+
+				.headline {
+					width: auto;
+
+					@include md {
+						width: 57%;
+					}
+
+					> h2 {
+						margin: 0 0 ($GLOBAL-MARGIN / 2) 35px;
+
+						@include md {
+							margin-left: 0;
+						}
+					}
+				}
+
+				.photo {
+					.yellowBar {
+						align-self: flex-end;
+					}						
+				}
+
+				.textWrap {
+					.text {
+
+						@include md {
+							padding-left: 0;
+							padding-right: 20%;
+							align-self: end;							
+						}
+					}
+				}
+			}
+		}
+	
+	}
+
+	h2, h3, h4, h5, h6 {
+		margin-top: 0;
+	}
+}

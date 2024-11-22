@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import styles from './styles/imageSlider.module.scss'
+import styles from './imageSlider.module.scss'
 import Image from 'next/image'
 import arrowLeft from '../images/arrow-left.png'
 import arrowRight from '../images/arrow-right.png'
@@ -18,7 +18,7 @@ const ImageSlider = ({data}) => {
 		dots: false,
 		infinite: true,
 		speed: 500,
-		slidesPerRow: 3,
+		slidesPerRow: 8,
 		className: styles.imageSliderWrapper,
 		prevArrow: <Arrow direction='left' />,
 		nextArrow: <Arrow direction='right' />

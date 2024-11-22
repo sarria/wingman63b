@@ -1,0 +1,27 @@
+@import '../styles/variables.scss';
+
+.root {
+	position: relative;
+	width: 100%;
+	background-color: white;
+	padding-top: 93px;
+
+
+	.wrapper {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+
+		> div {
+			width: 100%;
+		}
+
+		@include lg {
+			width: 80%;
+			max-width: $MAX-WIDTH;
+			margin: 0 auto;
+			padding: 0 0 100px 0;
+			background-color: RGB(245, 245, 245);
+		}
+	}
+}

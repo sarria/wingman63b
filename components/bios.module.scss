@@ -1,0 +1,155 @@
+@import '../styles/variables.scss';
+
+.root {
+	position: relative;
+	width: 100%;
+
+	.wrapper {
+		width: 100%;
+		
+		&.marginLeft {
+			@include lg {
+				width: 80%;
+				margin: 0 auto;
+			}
+		}
+
+		@include sm {
+			width: auto;
+			margin: 0 $GLOBAL-MARGIN;
+		}
+
+		@include lg {
+			max-width: $MAX-WIDTH;
+			margin: 0 auto;
+			padding: 0px;
+		}
+
+		.item {
+			margin-top: $GLOBAL-MARGIN;
+
+			.content {
+				display: flex;
+				flex-direction: column;
+				justify-content: right;
+				// background-color: gainsboro;
+
+				@include md {
+					flex-direction: row;
+				}
+
+				.photo {
+					width: auto;
+					// background-color: lightblue;
+
+					@include md {
+						width: 50%;
+					}					
+
+					.imageRatio {
+						
+						@include md {
+							// margin-left: 10%;
+							// padding-top: 7px;
+							// margin-left: 0;
+						}						
+					}
+				}
+
+				.bio {
+					width: auto;
+					color: white;
+
+					@include md {
+						width: 50%;
+						display: flex;
+						flex-direction: column;						
+					}
+
+					.text {
+						margin: $GLOBAL-MARGIN $GLOBAL-MARGIN 0 $GLOBAL-MARGIN;
+						text-align: left;
+						background-color: #00307c;
+						margin: 0;
+
+
+						@include md {
+							padding: 24px 13% 13% 13%;
+						}
+
+						> p {
+							margin-top: 0;
+						}
+
+						.name {
+							text-transform: uppercase;
+							font-size: 40px;
+							font-family: 'Montserrat', sans-serif; /* or 'Montserrat  Poppins' */
+							font-weight: 600; /* Adjust weight for thickness */
+							letter-spacing: 0px;
+							margin: 0 0 30px 0
+						}
+						.name2 {
+							text-transform: uppercase;
+							font-size: 40px;
+							font-family: 'Poppins', sans-serif; /* or 'Montserrat  Poppins' */
+							font-weight: 600; /* Adjust weight for thickness */
+							letter-spacing: 0px;
+							margin: 0;
+						}						
+					}
+
+					.yellowBar {
+						width: 16%;
+						height: 15px;
+						background-color: $GOLDEN-COLOR;
+					}
+				}
+			}
+		}
+
+		.thumbnails {
+			display: flex;
+			justify-content: center;
+			margin-bottom: $GLOBAL-MARGIN * 2;
+		
+			.thumbnail {
+				cursor: pointer;
+				overflow: hidden;
+				transition: border 0.3s;
+				border-bottom: solid 15px transparent;
+		
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+		
+					// Apply grayscale by default
+					filter: grayscale(100%);
+					transition: filter 0.3s ease;
+				}
+		
+				&:hover img {
+					// Remove grayscale on hover
+					filter: grayscale(0%);
+				}
+		
+				&.active img {
+					// Remove grayscale when selected
+					filter: grayscale(0%);
+				}
+		
+				&.active {
+					border-bottom-color: $DARKER-COLOR; // Use your defined darker color
+				}
+			}
+		}
+		
+			
+		
+	}
+
+	h2, h3, h4, h5, h6 {
+		margin-top: 0;
+	}	
+}

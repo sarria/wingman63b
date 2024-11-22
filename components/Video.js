@@ -1,4 +1,4 @@
-import styles from './styles/video.module.scss'
+import styles from './video.module.scss'
 import ReactPlayer from 'react-player'
 
 // https://github.com/CookPete/react-player

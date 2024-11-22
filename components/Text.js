@@ -1,5 +1,5 @@
 import parse from 'html-react-parser';
-import styles from './styles/text.module.scss'
+import styles from './text.module.scss'
 
 const Text = ({data}) => {
 

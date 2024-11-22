@@ -1,4 +1,4 @@
-@import '../../styles/variables.scss';
+@import '../styles/variables.scss';
 
 .root {
 	position: relative;
@@ -21,7 +21,8 @@
 
 		.image {
 			position: relative;
-			height: 275px;
+			height: 140px;
+			background-color: white;
 		}
 
 		.arrow {

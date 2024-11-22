@@ -3,7 +3,7 @@ import cx from 'classnames'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import styles from './styles/quotes.module.scss'
+import styles from './quotes.module.scss'
 
 const Quotes = ({data}) => {
 	const {quotes} = data;

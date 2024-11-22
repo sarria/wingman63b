@@ -1,7 +1,7 @@
 import parse from 'html-react-parser';
 import Link from 'next/link'
 import ImageRatio from './elements/ImageRatio'
-import styles from './styles/article.module.scss'
+import styles from './article.module.scss'
 
 const Article = ({data}) => {
 	// console.log('Article ::', data)

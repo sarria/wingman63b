@@ -2,7 +2,7 @@ import parse from 'html-react-parser';
 import Image from 'next/image'
 import Link from 'next/link'
 import cx from 'classnames'
-import styles from './styles/navigation.module.scss'
+import styles from './navigation.module.scss'
 import { useRouter } from "next/router";
 	
 const handleClick = () => {
@@ -18,7 +18,7 @@ const PrintNavigation = (items) => {
 			{items.map((item) => {
 				// console.log("item: ", item.page);
 				return (
-					<>
+					<>** ops **
 						{item.page && 
 							<div key={item.page.slug} className={cx(styles.item, {[styles.active]: router.asPath === "/" + item.page.slug})}>
 								<Link href={"/" + (item.page.slug === 'home-page' ? '' : item.page.slug)} >

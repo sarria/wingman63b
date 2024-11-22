@@ -1,4 +1,4 @@
-@import '../../styles/variables.scss';
+@import '../styles/variables.scss';
 
 .root {
 
@@ -29,5 +29,13 @@
 			}
 
 		}
+		
+		.label {
+			padding: 10px 0;
+  			text-align: center;
+			font-size: 16px;
+		}
+
+
 	}
 }

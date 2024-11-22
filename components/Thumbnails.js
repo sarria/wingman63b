@@ -1,5 +1,5 @@
 import parse from 'html-react-parser';
-import styles from './styles/thumbnails.module.scss'
+import styles from './thumbnails.module.scss'
 import ImageRatio from './elements/ImageRatio'
 
 const Thumbnails = ({data}) => {

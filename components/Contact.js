@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import styles from './styles/contact.module.scss';
+import styles from './contact.module.scss';
 import cx from 'classnames';
 
 const Contact = ({data}) => {

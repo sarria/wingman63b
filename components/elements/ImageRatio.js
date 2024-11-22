@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import cx from 'classnames'
-import styles from '../styles/ImageRatio.module.scss'
+import styles from './ImageRatio.module.scss'
 
 const ImageRatio = ({image, ratio}) => {
 	return (

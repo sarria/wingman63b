@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles/underConstruction.module.scss'; 
+import styles from './underConstruction.module.scss'; 
 
 const UnderConstruction = () => {
   return (

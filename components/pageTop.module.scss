@@ -1,0 +1,29 @@
+@import '../styles/variables.scss';
+
+.root {
+	position: fixed;
+	top: 0px;
+	z-index: 100;
+	width: 100%;
+	background-color: white;
+	padding: 20px 0;
+
+	.wrapper {
+		display: flex;
+		width: 80%;
+		max-width: $MAX-WIDTH;
+		margin: 0 auto;
+		justify-content: space-between;
+
+
+
+	}
+}
+
+.logo {
+	align-self: flex-start;
+}
+
+.topNav {
+	align-self: flex-end;
+}

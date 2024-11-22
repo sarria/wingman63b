@@ -4,15 +4,16 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
   font-size: 18px;
-  font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.67;
   letter-spacing: normal;
   text-align: left;
-  color: #707070;
+  color: #000000; /* #707070; */
+	font-family: 'Poppins', sans-serif; /* or 'Montserrat  Poppins' */
+	font-weight: 400; /* Adjust weight for thickness */
+	font-size: 14px;  
 }
 
 /* .burger {

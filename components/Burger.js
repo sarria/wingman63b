@@ -1,6 +1,6 @@
 import cx from 'classnames'
 import Link from 'next/link'
-import styles from './styles/burger.module.scss'
+import styles from './burger.module.scss'
 
 const Burger = () => {
 
