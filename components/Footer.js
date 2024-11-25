@@ -113,13 +113,14 @@ const Footer = ({global, buttons}) => {
 							<div className={styles.navigation}>
 								<Navigation
 									isFooter={true}
-									navigationPicture={global.burgerNavigationPicture}
-									navigationLeft={global.burgerNavigationLeft}
-									navigationRightTop={global.burgerNavigationRightTop}
-									navigationRightBottom={global.burgerNavigationRightBottom}
+									navigation={global.navigation}
+									// navigationPicture={global.burgerNavigationPicture}
+									// navigationLeft={global.burgerNavigationLeft}
+									// navigationRightTop={global.burgerNavigationRightTop}
+									// navigationRightBottom={global.burgerNavigationRightBottom}
 								/>
 							</div>
-							<div className={styles.address}>
+							{/* <div className={styles.address}>
 								{parse(global.address)}
 								<div className={styles.smallLogo}>
 									<Image
@@ -129,7 +130,7 @@ const Footer = ({global, buttons}) => {
 									/>
 								</div>
 								-.-
-							</div>
+							</div> */}
 						</div>
 						<div className={cx(styles.copyRight, styles.mobile)}>
 							{parse(global.copyRight)}

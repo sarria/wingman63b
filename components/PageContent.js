@@ -10,15 +10,16 @@ import Footer from './Footer'
 import Text from './Text'
 import Label from './Label'
 import Video from './Video'
-import Thumbnails from './Thumbnails'
+// import Thumbnails from './Thumbnails'
 import Bios from './Bios'
 // import Carousel from './Carousel'
 // import Burger from './Burger'
 import Articles from './Articles'
 import Images from './Images'
-import Quotes from './Quotes'
-import ImageSlider from './ImageSlider'
+// import Quotes from './Quotes'
+// import ImageSlider from './ImageSlider'
 import Contact from './Contact'
+// import ContactUs from './ContactUs'
 import PageTop from './PageTop'
 
 function PageContent({page, global}) {
@@ -105,6 +106,9 @@ function PageContent({page, global}) {
 							case 'contact':
 								// ele = <Contact data={module} />
 								break;
+							case 'contactUs':
+								ele = <Contact data={module} />
+								break;
 							default:
 								// code block
 						}
@@ -116,9 +120,9 @@ function PageContent({page, global}) {
 						)
 					})}
 
-					{/* <Footer 
+					<Footer 
 						global={global} buttons={page.buttons}
-					/> */}
+					/>
 				</div>
 			</div>	
 		

@@ -100,6 +100,7 @@
 					}
 
 					.telephone {
+						font-family: 'Montserrat', sans-serif; /* or 'Montserrat  Poppins' */
 						color: $GOLDEN-COLOR;
 						margin-left: 45px;					
 						margin-top: 80px;
@@ -115,8 +116,9 @@
 							display: block;
 							color: $GOLDEN-COLOR;
 							margin-top: 26px;
-							font-size: 28px;
-							font-weight: 600;
+							font-weight: 400;
+							font-size: 40px;
+						
 						}
 					}
 

@@ -18,7 +18,7 @@ const PrintNavigation = (items) => {
 			{items.map((item) => {
 				// console.log("item: ", item.page);
 				return (
-					<>** ops **
+					<>
 						{item.page && 
 							<div key={item.page.slug} className={cx(styles.item, {[styles.active]: router.asPath === "/" + item.page.slug})}>
 								<Link href={"/" + (item.page.slug === 'home-page' ? '' : item.page.slug)} >
@@ -34,7 +34,7 @@ const PrintNavigation = (items) => {
 	)
 }
 
-const Navigation = ({isFooter, navigationPicture, navigationLeft, navigationRightTop, navigationRightBottom}) => {
+const Navigation = ({isFooter, navigationPicture, navigation, navigationLeft, navigationRightTop, navigationRightBottom}) => {
 	return (
 		<>
 			{!isFooter && <input id="toggle" type="checkbox"></input>}
@@ -43,18 +43,19 @@ const Navigation = ({isFooter, navigationPicture, navigationLeft, navigationRigh
 					<div className={styles.content}>
 						<div className={styles.navigation}>
 							<div className={cx(styles.items, styles.left)}>
-								{PrintNavigation(navigationLeft)}
+								{/* {PrintNavigation(navigationLeft)} */}
+								{PrintNavigation(navigation)}
 							</div>
-							<div className={styles.right}>
+							{/* <div className={styles.right}>
 								<div className={cx(styles.items, styles.top)}>
 									{PrintNavigation(navigationRightTop)}
 								</div>
 								<div className={cx(styles.items, styles.bottom)}>
 									{PrintNavigation(navigationRightBottom)}
 								</div>
-							</div>
+							</div> */}
 						</div>
-						{!isFooter && <div className={styles.picture}>
+						{/* {!isFooter && <div className={styles.picture}>
 							{navigationPicture && 
 							<Image
 								alt={navigationPicture.altText}
@@ -62,7 +63,7 @@ const Navigation = ({isFooter, navigationPicture, navigationLeft, navigationRigh
 								width={navigationPicture.mediaDetails.width}
 								height={navigationPicture.mediaDetails.height}
 							/>}
-						</div>}
+						</div>} */}
 					</div>
 				</div>
 			</div>

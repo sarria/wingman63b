@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { useRouter } from "next/router";
 	
 const handleClick = () => {
-	document.getElementById('toggle').checked = false;
+	// document.getElementById('toggle').checked = false;
 }
 
 const Item = ({item}) => {
