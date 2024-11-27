@@ -9,7 +9,7 @@ const Video = ({ data }) => {
         <div className={styles.root}>
             <div className={styles.wrapper}>
                 {/* Aspect Ratio Box */}
-                <div style={{ "--aspect-ratio": 16 / 9 }} className={styles.box}>
+                <div className={styles.box}>
                     <ReactPlayer
                         url={data.videoUrl}
                         width="100%"

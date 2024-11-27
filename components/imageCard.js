@@ -24,7 +24,7 @@ const ImageCard = ({index, image, ratio, hasPadding, linkPage, imagesLayout}) =>
 						{label.toUpperCase()}&nbsp;&nbsp;<gold>&gt;</gold>
 					</div>}
 					{imagesLayout === '5col' &&
-					<div className={styles.label} style={{backgroundColor: index % 2 == 0 ? 'white' : null}}>
+					<div data-index={index} className={styles.label} style={{backgroundColor: index % 2 == 0 ? 'white' : '#e5e5e5'}}>
 						{label ? label.toUpperCase() : <span>&nbsp;</span>}
 					</div>}
 				</div>

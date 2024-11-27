@@ -1,4 +1,5 @@
 @import '../styles/variables.scss';
+@import '../styles/shared-styles.scss';
 
 .root {
 	position: relative;
@@ -6,32 +7,40 @@
 	padding-top: $GLOBAL-MARGIN;
 
 	.wrapper {
+		padding: 0 $GLOBAL-MARGIN/2;
+
 		&.marginLeft {
-			@include lg {
+
+			@include md {
 				width: 80%;
 				margin: 0 auto;
 			}
+			
 		}
 
 		h2 {
+			margin: 0;
+			width: fit-content;
+			text-wrap: wrap;			
 			text-align: left;
 			text-transform: uppercase;
-			font-size: 95px;
 			font-family: 'Montserrat', sans-serif; /* or 'Montserrat  Poppins' */
 			font-weight: 100; /* Adjust weight for thickness */
-			letter-spacing: -6px;
-			margin: 0;
+			font-size: 35px;
+			letter-spacing: -2px;							
+			
+			@include md {
+				font-size: 95px;
+				letter-spacing: -8px;
+			}		
 		}
 
 		.yellowBar {
-			width: 7%;
-			height: 10px;
-			background-color: $GOLDEN-COLOR;
-			top: -37px;
-			position: relative;							
-		}		
+			@extend .labelYellowBar;
+		}						
+
 		
-		@include lg {
+		@include md {
 
 		}
 
