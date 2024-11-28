@@ -11,7 +11,7 @@ const Video = ({ data }) => {
                 {/* Aspect Ratio Box */}
                 <div className={styles.box}>
                     <ReactPlayer
-                        url={data.videoUrl} // Replace YouTube link with a video file URL
+                        url="http://wingman63b.everlivesolutions.com/wp-content/uploads/2024/11/preview.mp4" //{data.videoUrl} // Replace YouTube link with a video file URL
                         width="100%"
                         height="100%"
                         playing={isPlaying} // Autoplay enabled
