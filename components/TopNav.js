@@ -10,7 +10,7 @@ const handleClick = () => {
 	document.getElementById('toggle').checked = false;
 }
 
-const Item = ({item}) => {
+const Item = ({item, toggleMenu}) => {
 	const router = useRouter();
 	// console.log("router.asPath ::", router.asPath)
 	// console.log("nav item: ", item, (!item.page && item.label && item.id) ? 'si' : 'no');
@@ -24,7 +24,10 @@ const Item = ({item}) => {
 			</div>}
 			{(!item.page && item.label && item.id) &&
 			<div key={item.id} className={cx(styles.item)}>
-				<a onClick={() => handleScrollToSection(item.id)}>
+				<a onClick={() => {
+					handleScrollToSection(item.id)
+					toggleMenu()
+				}}>
 					{item.label}
 				</a>
 			</div>
@@ -33,11 +36,11 @@ const Item = ({item}) => {
 	)
 }
 
-function TopNav({className, navigation}) {
+function TopNav({navigation, isOpen, toggleMenu}) {
 	return (
-		<div className={cx(className, styles.root)}>
+		<div className={cx(styles.root, {[styles.isOpen]:isOpen})}>
 			<div className={styles.wrapper}>
-				{navigation.map((item) => <Item item={item} />)}				
+				{navigation.map((item) => <Item item={item} toggleMenu={toggleMenu} />)}				
 			</div>
 		</div>
 	)

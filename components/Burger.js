@@ -1,26 +1,25 @@
-import cx from 'classnames'
-import Link from 'next/link'
-import styles from './burger.module.scss'
+import styles from './burger.module.scss';
+import { useState } from 'react';
 
-const Burger = () => {
+const Burger = ({isOpen, toggleMenu}) => {
+  const toggleButton = () => {
+	toggleMenu();
+  };
 
-	return (
-		<div className={cx('burger', styles.root)}>
-			<div className={styles.wrapper}>
-				<div className={styles.left}>
-					<Link href="/" className={styles.linkHome} passHref>&nbsp;</Link>
-				</div>
-				<div className={styles.right}>
-					<label htmlFor="toggle" className={cx('hamburger', styles.hamburger)}>
-						<div className="topBun"></div>
-						<div className="meat"></div>
-						<div className="bottomBun"></div>
-					</label>
-				</div>
-			</div>
-		</div>
-	)
-}
+  return (
+    <div className={styles.root} >
+      <div className={styles.wrapper}>
+        <div
+          className={`${styles.menuToggle} ${isOpen ? styles.open : ''}`}
+          onClick={toggleButton} 
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Burger;
-

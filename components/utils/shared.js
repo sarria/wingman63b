@@ -9,7 +9,7 @@ export function generateIdFromLabel(label) {
 export function handleScrollToSection(id) {
 	const element = document.getElementById(id);
 	if (element) {
-		const offset = 80; // Adjust this for your fixed header
+		const offset = 77; // Adjust this for your fixed header
 		const elementPosition = element.getBoundingClientRect().top + window.scrollY;
 		window.scrollTo({ top: elementPosition - offset, behavior: 'smooth' });
 	}

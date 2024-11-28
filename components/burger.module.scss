@@ -1,44 +1,47 @@
 @import '../styles/variables.scss';
 
 .root {
-	// position: absolute;
-	position: fixed;
-	top: 25px;	
-	width: 100%;
-	z-index: 99;
+	display: block;
+	position: relative;
+	padding-right: 10px;
+	top: -6px;
+
+	@include md {
+		display: none;
+	}
 
 	.wrapper {
-		display: flex;
-		
-		@include lg {
-			width: 80%;
-			max-width: $MAX-WIDTH;
-			margin: 0 auto;
-		}
-
-		.left {
-			flex-grow: 2;
+		.menuToggle {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			width: 30px; /* Width of the button */
+			height: 25px; /* Height to space out the lines */
+			cursor: pointer; /* Pointer cursor for interactivity */
 			position: relative;
-			top: -23px;
-			height: 80px;
 
-			a {
+			span {
 				width: 100%;
-				display: block;
-				height: 80px;
-				text-decoration: none;
+				height: 4px; /* Thickness of each line */
+				background-color: black; /* Color of the lines */
+				border-radius: 2px; /* Rounded edges for a polished look */
+				transition: all 0.3s ease; /* Smooth transition for all properties */
+			}
+
+			/* Transformations for the X */
+			&.open span:nth-child(1) {
+				transform: translateY(10px) rotate(45deg); /* Rotate and move the top line */
+			}
+
+			&.open span:nth-child(2) {
+				opacity: 0; /* Hide the middle line */
+			}
+
+			&.open span:nth-child(3) {
+				transform: translateY(-10px) rotate(-45deg); /* Rotate and move the bottom line */
+				top: -1px;
+				position: relative;
 			}
 		}
-
-		.right {
-			flex-grow: 1;
-			display: flex;
-			justify-content: flex-end;
-		}
-
-		.hamburger {
-			margin-right: 45px;
-		}
-	
-	}	
+	}
 }

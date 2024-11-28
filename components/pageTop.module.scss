@@ -10,20 +10,23 @@
 
 	.wrapper {
 		display: flex;
-		width: 80%;
 		max-width: $MAX-WIDTH;
 		margin: 0 auto;
 		justify-content: space-between;
+		padding-left: 10px;
 
+		.logo {
+			align-self: flex-start;
+		}
 
+		.navigation {
+			display: flex;
+			align-self: flex-end;
+		}
 
+		@include md {
+			width: 80%;
+		}			
 	}
 }
 
-.logo {
-	align-self: flex-start;
-}
-
-.topNav {
-	align-self: flex-end;
-}
