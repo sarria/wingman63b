@@ -11,14 +11,13 @@ const Video = ({ data }) => {
                 {/* Aspect Ratio Box */}
                 <div className={styles.box}>
                     <ReactPlayer
-                        url={data.videoUrl}
+                        url={data.videoUrl} // Replace YouTube link with a video file URL
                         width="100%"
                         height="100%"
                         playing={isPlaying} // Autoplay enabled
                         muted={true} // Ensure autoplay works in browsers
-                        light={false} // Disable preview image for immediate playback
                         loop={true} // Enable looping
-                        controls={false} // Optional: Show video controls
+                        controls={true} // Enable controls for better playback options
                     />
                 </div>
             </div>
