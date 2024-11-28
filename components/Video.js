@@ -3,27 +3,26 @@ import styles from './video.module.scss';
 import ReactPlayer from 'react-player';
 
 const Video = ({ data }) => {
-    return data?.videoUrl ? (
-      <div className={styles.root}>
-        <div className={styles.wrapper}>
-          <video
-            className={styles.video}
-            src={data.videoUrl}
-            width="100%"
-            height="100%"
-            controls
-            autoPlay
-            loop
-            muted
-          >
-            Your browser does not support the video tag.
-          </video>
+    const [isPlaying, setIsPlaying] = useState(true); // Ensure autoplay is triggered
+
+    return data?.videoUrl && (
+        <div className={styles.root}>
+            <div className={styles.wrapper}>
+                {/* Aspect Ratio Box */}
+                <div className={styles.box}>
+                    <ReactPlayer
+                        url={data.videoUrl} // Replace YouTube link with a video file URL
+                        width="100%"
+                        height="100%"
+                        playing={isPlaying} // Autoplay enabled
+                        muted={true} // Ensure autoplay works in browsers
+                        loop={true} // Enable looping
+                        controls={false} // Enable controls for better playback options
+                    />
+                </div>
+            </div>
         </div>
-      </div>
-    ) : (
-      <div>No video available</div>
     );
 };
 
 export default Video;
-
