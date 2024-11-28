@@ -3,6 +3,10 @@
 .root {
 	width: 100%;
 
+	@include md {
+		padding-bottom: $GLOBAL-MARGIN*2;
+	}	
+
 	&.paddingTop {
 		// padding-top: $GLOBAL-MARGIN;
 	}

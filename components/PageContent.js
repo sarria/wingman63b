@@ -114,7 +114,7 @@ function PageContent({page, global}) {
 						}
 				
 						return (
-							<div key={idx}>
+							<div key={idx} className={cx({[styles.grayBg]:module.grayBackground})}>
 								{ele}
 							</div>
 						)

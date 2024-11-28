@@ -3,30 +3,12 @@ import cx from 'classnames';
 import parse from 'html-react-parser';
 import styles from './bios.module.scss';
 import ImageRatio from './elements/ImageRatio';
+import { handleScrollToSection } from './utils/shared';
 
 const Bios = ({ data }) => {
     const [selectedBio, setSelectedBio] = useState(0);
-    const [thumbnailSize, setThumbnailSize] = useState(0);
+    const [showItem, setShowItem] = useState(false);
     const thumbnailsRef = useRef(null);
-    /*
-    useEffect(() => {
-        const resizeThumbnails = () => {
-            if (thumbnailsRef.current) {
-                const firstThumbnail = thumbnailsRef.current.children[0];
-                if (firstThumbnail) {
-                    const width = firstThumbnail.clientWidth; // Get the computed width in pixels
-                    setThumbnailSize(width); // Update thumbnail size
-                }
-            }
-        };
-
-        resizeThumbnails();
-        window.addEventListener("resize", resizeThumbnails);
-
-        return () => window.removeEventListener("resize", resizeThumbnails);
-    }, [data.bios.length]);
-    */
-   
     const item = data.bios[selectedBio] || null;
 
     return (
@@ -36,23 +18,18 @@ const Bios = ({ data }) => {
                     {data.bios.map((bio, index) => (
                         <div
                             key={index}
-                            /*
-                            style={{
-                                width: `${100 / data.bios.length}%`, // Dynamic width calculation
-                                height: `${thumbnailSize}px`, // Dynamically set height
-                            }}
-                            */
                             className={cx(styles.thumbnail, { [styles.active]: selectedBio === index })}
-                            onClick={() => setSelectedBio(index)}
+                            onClick={() => {setSelectedBio(index), setShowItem(true), handleScrollToSection('bios')}}
                         >
                             <ImageRatio image={bio.photo} ratio="115%" />
                         </div>
                     ))}
                 </div>
                 {item && (
-                    <div className={styles.item} id={selectedBio + "_" + item.name}>
+                    <div className={cx(styles.item, {[styles.showItem]: showItem})} id={selectedBio + "_" + item.name}>
                         <div className={styles.content}>
                             <div className={styles.photo}>
+                                <div className={styles.closeBtn} onClick={() => setShowItem(false)}>X</div>
                                 <div className={styles.imageRatio}>
                                     <ImageRatio image={item.photo} ratio="115%" />
                                 </div>

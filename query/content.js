@@ -40,25 +40,10 @@ export default function query(slug) {
 						}
 					}					
 					content_blocks {
-						desktopHeaderImage {
-							altText
-							sourceUrl
-							mediaDetails {
-								width
-								height
-							}
-						}
-						mobileHeaderImage {
-							altText
-							sourceUrl
-							mediaDetails {
-								width
-								height
-							}
-						}
 						modules {
 							moduleType
 							marginLeft
+							grayBackground
 							label
 							text
 							videoUrl
