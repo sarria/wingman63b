@@ -16,3 +16,19 @@
     top: -37px;
   }
 }
+
+.labelHeader {
+  width: fit-content;
+  margin: 0;
+  text-wrap: wrap;							
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif; /* or 'Montserrat  Poppins' */
+  font-weight: 100;
+  font-size: 42px;
+  letter-spacing: -2px;
+  
+  @include md {
+    font-size: 95px;
+    letter-spacing: -8px;
+  }  
+}

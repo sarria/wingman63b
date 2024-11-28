@@ -2,6 +2,7 @@ import parse from 'html-react-parser';
 import Image from 'next/image'
 import Link from 'next/link'
 import cx from 'classnames'
+import { handleScrollToSection } from './utils/shared';
 import styles from './navigation.module.scss'
 import { useRouter } from "next/router";
 	
@@ -16,15 +17,22 @@ const PrintNavigation = (items) => {
 	return (
 		<>
 			{items.map((item) => {
-				// console.log("item: ", item.page);
+				// console.log("nav item: ", item, (!item.page && item.label && item.id) ? 'si' : 'no');
 				return (
 					<>
-						{item.page && 
+						{item.page &&
 							<div key={item.page.slug} className={cx(styles.item, {[styles.active]: router.asPath === "/" + item.page.slug})}>
 								<Link href={"/" + (item.page.slug === 'home-page' ? '' : item.page.slug)} >
 									<a onClick={handleClick}>{parse(item.page.title.replace('/', '/<br/>'))}</a>
 								</Link>
 							</div>
+						}
+						{(!item.page && item.label && item.id) &&
+							<div key={item.id} className={cx(styles.item)}>
+								<a onClick={() => handleScrollToSection(item.id)}>
+									{item.label}
+								</a>
+							</div>							
 						}
 					</>
 				)
@@ -43,27 +51,9 @@ const Navigation = ({isFooter, navigationPicture, navigation, navigationLeft, na
 					<div className={styles.content}>
 						<div className={styles.navigation}>
 							<div className={cx(styles.items, styles.left)}>
-								{/* {PrintNavigation(navigationLeft)} */}
 								{PrintNavigation(navigation)}
 							</div>
-							{/* <div className={styles.right}>
-								<div className={cx(styles.items, styles.top)}>
-									{PrintNavigation(navigationRightTop)}
-								</div>
-								<div className={cx(styles.items, styles.bottom)}>
-									{PrintNavigation(navigationRightBottom)}
-								</div>
-							</div> */}
 						</div>
-						{/* {!isFooter && <div className={styles.picture}>
-							{navigationPicture && 
-							<Image
-								alt={navigationPicture.altText}
-								src={navigationPicture.sourceUrl}
-								width={navigationPicture.mediaDetails.width}
-								height={navigationPicture.mediaDetails.height}
-							/>}
-						</div>} */}
 					</div>
 				</div>
 			</div>

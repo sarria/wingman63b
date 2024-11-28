@@ -3,10 +3,10 @@ import styles from './images.module.scss'
 import ImageCard from './imageCard'
 
 const Images = ({data}) => {
-	console.log('Images data ::', data)
+	// console.log('Images data ::', data)
 	const {prevModuleType, nextModuleType, imagesLayout, imagePadding, images, linkPage} = data;
 	const hasPadding = imagePadding ? 'padding' : '';
-	console.log('marginLeft ::', imagesLayout, imagePadding)
+	// console.log('marginLeft ::', imagesLayout, imagePadding)
 
 	return (
 		<div className={cx(styles.root, styles['layout_' + imagesLayout], {[styles.paddingTop]: prevModuleType!=='images'}, {[styles.paddingBottom]: nextModuleType!=='images'})}>

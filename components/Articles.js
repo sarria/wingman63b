@@ -1,15 +1,16 @@
 import parse from 'html-react-parser';
 import styles from './articles.module.scss'
 import ImageRatio from './elements/ImageRatio'
+import { generateIdFromLabel } from './utils/shared';
 
 const Articles = ({data}) => {
-	console.log('Articles data ::', data)
+	// console.log('Articles data ::', data)
 	
 	return data?.articles &&  (
 		<div className={styles.root} id='articles'>
 			<div className={styles.wrapper}>
 			{data.articles.map((item, idx) => item.text && (
-				<div key={idx} className={styles.item} id={item.headline}>
+				<div key={idx} id={generateIdFromLabel(item.headline)} className={styles.item}>
 					<div className={styles.content}>
 						<div className={styles.photo}>
 							<div className={styles.imageRatio}>

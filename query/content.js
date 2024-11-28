@@ -18,7 +18,9 @@ export default function query(slug) {
 						slug
 						title
 					  }
-					}
+					},
+					label,
+					id
 				  }					
 				}
 			}

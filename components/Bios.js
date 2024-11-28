@@ -8,7 +8,7 @@ const Bios = ({ data }) => {
     const [selectedBio, setSelectedBio] = useState(0);
     const [thumbnailSize, setThumbnailSize] = useState(0);
     const thumbnailsRef = useRef(null);
-
+    /*
     useEffect(() => {
         const resizeThumbnails = () => {
             if (thumbnailsRef.current) {
@@ -25,7 +25,8 @@ const Bios = ({ data }) => {
 
         return () => window.removeEventListener("resize", resizeThumbnails);
     }, [data.bios.length]);
-
+    */
+   
     const item = data.bios[selectedBio] || null;
 
     return (
@@ -35,10 +36,12 @@ const Bios = ({ data }) => {
                     {data.bios.map((bio, index) => (
                         <div
                             key={index}
+                            /*
                             style={{
                                 width: `${100 / data.bios.length}%`, // Dynamic width calculation
                                 height: `${thumbnailSize}px`, // Dynamically set height
                             }}
+                            */
                             className={cx(styles.thumbnail, { [styles.active]: selectedBio === index })}
                             onClick={() => setSelectedBio(index)}
                         >

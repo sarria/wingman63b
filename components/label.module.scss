@@ -19,20 +19,7 @@
 		}
 
 		h2 {
-			margin: 0;
-			width: fit-content;
-			text-wrap: wrap;			
-			text-align: left;
-			text-transform: uppercase;
-			font-family: 'Montserrat', sans-serif; /* or 'Montserrat  Poppins' */
-			font-weight: 100; /* Adjust weight for thickness */
-			font-size: 35px;
-			letter-spacing: -2px;							
-			
-			@include md {
-				font-size: 95px;
-				letter-spacing: -8px;
-			}		
+			@extend .labelHeader	
 		}
 
 		.yellowBar {

@@ -9,7 +9,7 @@
 		width: 100%;
 		
 		&.marginLeft {
-			@include lg {
+			@include sm {
 				width: 80%;
 				margin: 0 auto;
 			}
@@ -100,13 +100,20 @@
 		.thumbnails {
 			display: flex;
 			justify-content: center;
+			flex-direction: row;
+			flex-wrap: wrap;			
 			margin-bottom: $GLOBAL-MARGIN * 2;
 		
 			.thumbnail {
 				cursor: pointer;
 				overflow: hidden;
 				transition: border 0.3s;
-				border-bottom: solid 15px transparent;
+				width: 50%;
+
+				@include md {
+					width: 11.11%;
+					border-bottom: solid 15px transparent;
+				}
 		
 				img {
 					width: 100%;
@@ -114,8 +121,11 @@
 					object-fit: cover;
 		
 					// Apply grayscale by default
-					filter: grayscale(100%);
 					transition: filter 0.3s ease;
+
+					@include md {
+						filter: grayscale(100%);
+					}					
 				}
 		
 				&:hover img {
