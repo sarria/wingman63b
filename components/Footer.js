@@ -22,12 +22,7 @@ const Footer = ({global, buttons}) => {
 	// console.log("footer buttons ::", buttons)
 	return (
 		<>
-			<div className={styles.buttons}>
-				<div className={styles.wrapper}>
-					<Button arrow='&#60' page={buttons.previous} />
-					<Button arrow='&#62' page={buttons.next} />
-				</div>
-			</div>
+
 		
 			<footer className={styles.root}>
 				<div className={styles.wrapper}>
