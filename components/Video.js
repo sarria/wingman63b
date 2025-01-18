@@ -17,7 +17,7 @@ const Video = ({ data }) => {
                         playing={isPlaying} // Autoplay enabled
                         muted={true} // Ensure autoplay works in browsers
                         loop={true} // Enable looping
-                        controls={false} // Enable controls for better playback options
+                        controls={true} // Enable controls for better playback options
                     />
                 </div>
             </div>
