@@ -122,9 +122,32 @@
 						}
 					}
 
+					.email {
+						font-family: 'Montserrat', sans-serif; /* or 'Montserrat  Poppins' */
+						color: $GOLDEN-COLOR;
+						margin-left: 45px;					
+						margin-top: 0;
+						font-size: 23px;
+						font-weight: 700;
+
+						a {
+							color: inherit;
+							text-decoration: none;
+						}
+
+						@include md {
+							display: block;
+							color: $GOLDEN-COLOR;
+							margin-top: 0;
+							font-weight: 400;
+							font-size: 23px;
+						
+						}
+					}					
+
 					.social {
 						display: flex;
-						justify-content: space-between;
+						justify-content: space-evenly;
 						width: 265px;
 						margin-left: 45px;
 						margin-top: 40px;

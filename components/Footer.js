@@ -97,7 +97,11 @@ const Footer = ({global, buttons}) => {
 									</div>}	
 									<div className={styles.telephone}>
 										<Link href={'tel:' + global.telephone}>{global.telephone}</Link>
-									</div>					
+									</div>
+									{global.email && 
+									<div className={styles.email}>
+										<Link href={'mailto:' + global.email}>{global.email}</Link>
+									</div>}
 								</div>
 							</div> 
 							<div className={cx(styles.copyRight, styles.desktop)}>
