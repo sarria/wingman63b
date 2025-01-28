@@ -11,6 +11,19 @@ const Bios = ({ data }) => {
     const thumbnailsRef = useRef(null);
     const item = data.bios[selectedBio] || null;
 
+    const showSelectedBio = (index) => {
+        setSelectedBio(index);
+        setShowItem(true);
+        handleScrollToSection('bios')
+    }
+
+    const goNext = () => {
+        const nextBio = selectedBio + 1 == data.bios.length ? 0 : ++selectedBio;
+        setSelectedBio(nextBio);
+        setShowItem(true);
+        handleScrollToSection('singleBio')        
+    }
+
     return (
         <div className={styles.root} id="bios">
             <div className={cx(styles.wrapper, { [styles.marginLeft]: data.marginLeft })}>
@@ -19,7 +32,7 @@ const Bios = ({ data }) => {
                         <div
                             key={index}
                             className={cx(styles.thumbnail, { [styles.active]: selectedBio === index })}
-                            onClick={() => {setSelectedBio(index), setShowItem(true), handleScrollToSection('bios')}}
+                            onClick={() => showSelectedBio(index)}
                         >
                             <ImageRatio image={bio.photo} ratio="115%" />
                         </div>
@@ -27,7 +40,7 @@ const Bios = ({ data }) => {
                 </div>
                 {item && (
                     <div className={cx(styles.item, {[styles.showItem]: showItem})} id={selectedBio + "_" + item.name}>
-                        <div className={styles.content}>
+                        <div className={styles.content} id='singleBio'>
                             <div className={styles.photo}>
                                 <div className={styles.closeBtn} onClick={() => setShowItem(false)}>X</div>
                                 <div className={styles.imageRatio}>
@@ -46,6 +59,9 @@ const Bios = ({ data }) => {
                         </div>
                     </div>
                 )}
+            </div>
+            <div className={styles.next} onClick={() => goNext()}>
+                <div>Next &gt;</div>
             </div>
         </div>
     );

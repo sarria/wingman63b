@@ -39,7 +39,6 @@
 
 			@include md {
 				position: relative;
-				margin-top: $GLOBAL-MARGIN;
 				display: block;
 			}
 
@@ -51,10 +50,11 @@
 				display: flex;
 				flex-direction: column;
 				justify-content: right;
-				// background-color: gainsboro;
+				padding-top: 0;
 
 				@include md {
 					flex-direction: row;
+					padding-top: $GLOBAL-MARGIN;
 				}
 
 				.photo {
@@ -78,7 +78,7 @@
 						cursor: pointer; 
 						box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for elevation */
 						transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover/active effects */
-					  }
+					}
 
 					@include md {
 						width: 50%;
@@ -101,7 +101,7 @@
 
 					.text {
 						text-align: left;
-						background-color: #00307c;
+						background-color: $BLUE-COLOR;
 						padding: 24px $GLOBAL-MARGIN/2;
 						margin: 0;
 
@@ -142,7 +142,7 @@
 			justify-content: center;
 			flex-direction: row;
 			flex-wrap: wrap;			
-			margin-bottom: $GLOBAL-MARGIN * 2;
+			// margin-bottom: $GLOBAL-MARGIN * 2;
 		
 			.thumbnail {
 				cursor: pointer;
@@ -151,8 +151,9 @@
 				width: 50%;
 
 				@include md {
-					width: 11.11%;
+					width: 17.11%; //11.11%;
 					border-bottom: solid 15px transparent;
+					margin-bottom: 15px;
 				}
 		
 				img {
@@ -186,6 +187,25 @@
 		
 			
 		
+	}
+
+	.next {
+		display: none;
+
+		@include md {
+			width: 80%;
+			margin: 0 auto;
+			display: flex;
+			justify-content: flex-end;
+			font-weight: 700;
+			  font-size: 16px;
+			color: $BLUE-COLOR;
+			
+			& > div:hover {
+				cursor: pointer;
+				text-decoration: underline;
+			}
+		}		
 	}
 
 	h2, h3, h4, h5, h6 {
